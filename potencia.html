@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포텐시아 POTENCIA WOMEN — 여성 두피·모발 밸런스 캡슐</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #FFFFFF;
+      --off-white: #F8F7F4;
+      --green-pale: #EFF5EC;
+      --green: #62845A;
+      --green-dark: #455E3D;
+      --green-light: #9DB890;
+      --charcoal: #1A1A1A;
+      --text: #1A1A1A;
+      --mid: #5A5A5A;
+      --light: #9A9A9A;
+      --border: #E4E2DC;
+      --font: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      height: 58px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px;
+    }
+    .nav-brand {
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--text);
+    }
+    .nav-brand span { color: var(--green); }
+    .nav-cta {
+      background: var(--green); color: #fff;
+      border: none; padding: 9px 22px;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer; font-family: var(--font);
+      text-decoration: none; display: inline-block;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--green-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: 58px;
+      min-height: 100dvh;
+      background: var(--white);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding-left: 24px; padding-right: 24px;
+      padding-bottom: 80px;
+    }
+    .hero__eyebrow {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 36px;
+    }
+    .hero__product {
+      width: 180px; height: auto;
+      margin: 0 auto 52px;
+      display: block;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
+    }
+    @media (min-width: 768px) { .hero__product { width: 240px; } }
+
+    .hero__headline {
+      font-size: clamp(26px, 4.5vw, 50px);
+      font-weight: 300; line-height: 1.35;
+      letter-spacing: -0.025em; color: var(--text);
+      margin-bottom: 20px;
+    }
+    .hero__headline strong { font-weight: 700; }
+    .hero__sub {
+      font-size: clamp(14px, 1.8vw, 17px);
+      font-weight: 300; color: var(--mid);
+      line-height: 1.9; margin-bottom: 44px;
+    }
+    .hero__cta {
+      display: inline-block; background: var(--green);
+      color: #fff; text-decoration: none;
+      padding: 16px 52px;
+      font-size: 14px; font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer; border: none;
+      font-family: var(--font);
+      transition: background 0.2s;
+    }
+    .hero__cta:hover { background: var(--green-dark); }
+    .hero__scroll {
+      margin-top: 64px;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 10px;
+    }
+    .hero__scroll-line {
+      width: 1px; height: 44px;
+      background: linear-gradient(to bottom, var(--border), transparent);
+    }
+    .hero__scroll-text {
+      font-size: 10px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--light);
+    }
+
+    /* ── SECTION UTILS ── */
+    .section { padding: 100px 24px; }
+    .section--alt { background: var(--off-white); }
+    .section--green { background: var(--green-pale); }
+    .section--dark { background: var(--charcoal); color: #fff; }
+
+    .container { max-width: 1060px; margin: 0 auto; }
+    .container--narrow { max-width: 720px; margin: 0 auto; }
+
+    .label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 20px; display: block;
+    }
+    .label--white { color: var(--green-light); }
+    .label--center { text-align: center; }
+
+    .divider-line {
+      width: 36px; height: 1px;
+      background: var(--green); margin: 0 auto 40px;
+    }
+
+    /* ── PROBLEM ── */
+    .problem__headline {
+      font-size: clamp(22px, 4vw, 40px);
+      font-weight: 600; line-height: 1.35;
+      letter-spacing: -0.025em; margin-bottom: 12px;
+    }
+    .problem__lead {
+      font-size: 16px; color: var(--mid);
+      line-height: 1.8; margin-bottom: 48px;
+    }
+    .problem__list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0;
+      margin-bottom: 56px;
+      border: 1px solid var(--border);
+    }
+    .problem__item {
+      display: flex; align-items: center; gap: 20px;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+    .problem__item:last-child { border-bottom: none; }
+    .problem__dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+    }
+    .problem__text { font-size: 16px; font-weight: 400; color: var(--text); }
+    .problem__closing {
+      font-size: clamp(17px, 3vw, 26px);
+      font-weight: 600; line-height: 1.5;
+      color: var(--text);
+    }
+    .problem__closing .accent { color: var(--green); }
+
+    /* ── AXES ── */
+    .axes__headline {
+      font-size: clamp(22px, 3.8vw, 42px);
+      font-weight: 300; line-height: 1.35;
+      letter-spacing: -0.025em;
+      text-align: center; margin-bottom: 56px;
+    }
+    .axes__headline strong { font-weight: 700; }
+    .axes__grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      margin-bottom: 1px;
+    }
+    @media (max-width: 600px) { .axes__grid { grid-template-columns: 1fr; } }
+    .axes__card {
+      background: var(--white);
+      padding: 40px 36px 44px;
+      position: relative; overflow: hidden;
+    }
+    .axes__card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--green);
+    }
+    .axes__card-tag {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .axes__card-tag::before {
+      content: ''; width: 20px; height: 1px; background: var(--green);
+    }
+    .axes__card-title {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700; letter-spacing: -0.015em;
+      margin-bottom: 16px; line-height: 1.2;
+    }
+    .axes__card-body {
+      font-size: 14px; color: var(--mid); line-height: 1.8;
+    }
+    .axes__statement {
+      background: var(--off-white);
+      padding: 56px 36px; text-align: center;
+    }
+    .axes__statement-main {
+      font-size: clamp(18px, 3vw, 30px);
+      font-weight: 600; line-height: 1.6;
+      margin-bottom: 8px; letter-spacing: -0.015em;
+    }
+    .axes__statement-main .accent { color: var(--green); }
+    .axes__statement-sub {
+      font-size: 14px; color: var(--mid); margin-top: 12px;
+    }
+
+    /* ── STATS ── */
+    .stats__headline {
+      font-size: clamp(20px, 3vw, 34px);
+      font-weight: 600; text-align: center;
+      margin-bottom: 56px; letter-spacing: -0.02em;
+    }
+    .stats__grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2px; background: rgba(0,0,0,0.08);
+    }
+    @media (min-width: 768px) { .stats__grid { grid-template-columns: repeat(4, 1fr); } }
+    .stats__card {
+      background: var(--white);
+      padding: 44px 20px; text-align: center;
+    }
+    .stats__number {
+      font-size: clamp(40px, 6vw, 60px);
+      font-weight: 700; color: var(--green);
+      line-height: 1; margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+    .stats__desc { font-size: 13px; color: var(--mid); line-height: 1.7; }
+
+    /* ── INGREDIENT ── */
+    .ingredient {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center;
+    }
+    @media (max-width: 768px) {
+      .ingredient { grid-template-columns: 1fr; gap: 44px; }
+      .ingredient--reverse .ingredient__visual { order: -1; }
+    }
+    .ingredient--reverse .ingredient__visual { order: 2; }
+    @media (max-width: 768px) { .ingredient--reverse .ingredient__visual { order: -1; } }
+
+    .ingredient__visual {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ingredient__circle {
+      width: min(300px, 80vw); height: min(300px, 80vw);
+      border-radius: 50%; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ingredient__circle img {
+      width: 80%; height: 80%; object-fit: contain;
+    }
+    .ingredient__circle--white { background: #EDEDEA; }
+    .ingredient__circle--green { background: var(--green-pale); }
+    .ingredient__circle--warm { background: #F0EDE8; }
+
+    .ingredient__badge {
+      display: inline-block; background: var(--green);
+      color: #fff; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 5px 14px; margin-bottom: 20px;
+    }
+    .ingredient__name {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700; line-height: 1.05;
+      letter-spacing: -0.025em; margin-bottom: 6px;
+    }
+    .ingredient__dosage {
+      font-size: 15px; color: var(--green);
+      font-weight: 600; letter-spacing: 0.03em;
+      margin-bottom: 28px;
+    }
+    .ingredient__body {
+      font-size: 15px; color: var(--mid);
+      line-height: 1.85; margin-bottom: 28px;
+    }
+    .ingredient__quote {
+      font-size: 15px; font-weight: 600;
+      color: var(--text); line-height: 1.7;
+      padding: 18px 0 18px 20px;
+      border-left: 2px solid var(--green);
+    }
+
+    /* ── EXPERT ── */
+    .expert {
+      display: grid; grid-template-columns: 280px 1fr;
+      gap: 72px; align-items: center;
+    }
+    @media (max-width: 768px) {
+      .expert { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    }
+    .expert__photo {
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover; object-position: top center;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .expert__photo { max-width: 200px; margin: 0 auto; }
+    }
+    .expert__tag {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 12px;
+    }
+    .expert__name {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700; letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .expert__role {
+      font-size: 14px; color: var(--mid);
+      margin-bottom: 36px;
+    }
+    .expert__body {
+      font-size: 16px; line-height: 1.9;
+      color: var(--text); font-weight: 300;
+    }
+    .expert__body strong { font-weight: 600; }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy__headline {
+      font-size: clamp(22px, 4vw, 44px);
+      font-weight: 600; line-height: 1.35;
+      letter-spacing: -0.025em;
+      text-align: center; color: #fff;
+      margin-bottom: 60px;
+    }
+    .philosophy__list { list-style: none; }
+    .philosophy__item {
+      display: flex; align-items: center; gap: 0;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .philosophy__item:last-child { border-bottom: none; }
+    .philosophy__from {
+      flex: 1; font-size: 14px;
+      color: rgba(255,255,255,0.28);
+      text-decoration: line-through; padding-right: 20px;
+    }
+    .philosophy__arrow {
+      flex-shrink: 0; width: 48px; text-align: center;
+      color: var(--green-light); font-size: 16px;
+    }
+    .philosophy__to {
+      flex: 1.4; font-size: 17px;
+      font-weight: 600; color: #fff;
+      padding-left: 20px;
+    }
+    @media (max-width: 600px) {
+      .philosophy__from, .philosophy__arrow { display: none; }
+      .philosophy__to { padding-left: 0; font-size: 16px; }
+      .philosophy__item { padding: 22px 0; }
+    }
+
+    /* ── ROUTINE ── */
+    .routine__headline {
+      font-size: clamp(22px, 4vw, 42px);
+      font-weight: 600; text-align: center;
+      letter-spacing: -0.025em; margin-bottom: 12px;
+    }
+    .routine__sub {
+      font-size: 16px; color: var(--mid);
+      text-align: center; margin-bottom: 60px;
+    }
+    .routine__grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+    }
+    @media (max-width: 600px) { .routine__grid { grid-template-columns: repeat(2, 1fr); } }
+    .routine__step {
+      background: var(--white);
+      padding: 44px 20px; text-align: center;
+    }
+    .routine__step-num {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.2em; color: var(--green);
+      margin-bottom: 16px;
+    }
+    .routine__step-value {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700; letter-spacing: -0.025em;
+      color: var(--text); line-height: 1;
+      margin-bottom: 10px;
+    }
+    .routine__step-label {
+      font-size: 12px; color: var(--mid); line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .cta__headline {
+      font-size: clamp(26px, 5vw, 52px);
+      font-weight: 300; line-height: 1.35;
+      letter-spacing: -0.025em;
+      text-align: center; margin-bottom: 8px;
+    }
+    .cta__headline strong { font-weight: 700; display: block; }
+    .cta__brand {
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--green); text-align: center;
+      margin-bottom: 56px;
+    }
+    .cta__form-wrap {
+      max-width: 560px; margin: 0 auto;
+      background: #fff; padding: 44px 40px;
+      border: 1px solid var(--border);
+    }
+    @media (max-width: 600px) { .cta__form-wrap { padding: 32px 24px; } }
+    .cta__form-title {
+      font-size: 16px; font-weight: 700;
+      text-align: center; margin-bottom: 8px;
+    }
+    .cta__form-sub {
+      font-size: 13px; color: var(--mid);
+      text-align: center; line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .cta__disclaimer {
+      font-size: 11px; color: var(--light);
+      text-align: center; line-height: 1.8;
+      margin-top: 28px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--charcoal);
+      padding: 52px 24px; text-align: center;
+    }
+    .footer__brand {
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: #fff; margin-bottom: 16px;
+    }
+    .footer__brand span { color: var(--green-light); }
+    .footer__copy {
+      font-size: 12px; color: rgba(255,255,255,0.3);
+      line-height: 1.8; margin-bottom: 20px;
+    }
+    .footer__links {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 16px;
+    }
+    .footer__links a {
+      font-size: 11px; color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+    .footer__links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+  <!-- ────────────── NAV ────────────── -->
+  <nav class="nav">
+    <div class="nav-brand">POTENCIA <span>WOMEN</span></div>
+    <a href="#form" class="nav-cta">출시 알림 받기</a>
+  </nav>
+
+  <!-- ────────────── HERO ────────────── -->
+  <section class="hero">
+    <p class="hero__eyebrow">POTENCIA WOMEN — 두피·모발 밸런스 캡슐</p>
+    <img
+      src="images/Gemini_Generated_Image_iqmko9iqmko9iqmk 3.png"
+      alt="포텐시아 POTENCIA WOMEN 캡슐 제품"
+      class="hero__product"
+    >
+    <h1 class="hero__headline">
+      여성의 두피와 모발을<br>
+      <strong>함께 고려한 캡슐</strong>
+    </h1>
+    <p class="hero__sub">
+      두피와 모발은 따로 약해지지 않으니까.<br>
+      포텐시아는 함께 설계했습니다.
+    </p>
+    <a href="#form" class="hero__cta">출시 알림 신청하기</a>
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+      <span class="hero__scroll-text">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ────────────── PROBLEM ────────────── -->
+  <section class="section section--alt">
+    <div class="container--narrow">
+      <span class="label reveal">이런 변화를 느끼고 있다면</span>
+      <h2 class="problem__headline reveal reveal-d1">
+        정수리 볼륨이 예전 같지 않고<br>
+        가르마가 신경 쓰이기 시작했다면
+      </h2>
+      <p class="problem__lead reveal reveal-d2">
+        비어 보이는 변화는 두피와 모발이 함께 약해졌다는 신호일 수 있습니다.
+      </p>
+      <ul class="problem__list reveal reveal-d3">
+        <li class="problem__item">
+          <span class="problem__dot"></span>
+          <span class="problem__text">정수리 볼륨이 예전 같지 않고 납작해 보입니다</span>
+        </li>
+        <li class="problem__item">
+          <span class="problem__dot"></span>
+          <span class="problem__text">가르마가 넓어 보이고 두피가 보이기 시작했습니다</span>
+        </li>
+        <li class="problem__item">
+          <span class="problem__dot"></span>
+          <span class="problem__text">모발이 얇고 힘없이 처지며 탄력이 사라졌습니다</span>
+        </li>
+        <li class="problem__item">
+          <span class="problem__dot"></span>
+          <span class="problem__text">끝으로 갈수록 끊기고 푸석하게 느껴집니다</span>
+        </li>
+      </ul>
+      <p class="problem__closing reveal reveal-d4">
+        겉만 정리하는 루틴에서,<br>
+        <span class="accent">안쪽을 설계하는 루틴</span>으로.
+      </p>
+    </div>
+  </section>
+
+  <!-- ────────────── TWO AXES ────────────── -->
+  <section class="section">
+    <div class="container">
+      <h2 class="axes__headline reveal">
+        두피만 봐도 부족하고<br>
+        <strong>모발만 봐도 부족합니다</strong>
+      </h2>
+      <div class="axes__grid">
+        <div class="axes__card reveal reveal-d1">
+          <div class="axes__card-tag">두피축 · SCALP AXIS</div>
+          <div class="axes__card-title">두피는<br>시작점입니다</div>
+          <p class="axes__card-body">
+            두피는 새 모발이 자라나는 환경입니다.
+            두피 산화 스트레스는 모낭세포 노화, 조기 퇴행기 진입,
+            지질과산화와 연결될 수 있습니다.
+            환경이 무너지면 새 모발의 출발점도 흔들립니다.
+          </p>
+        </div>
+        <div class="axes__card reveal reveal-d2">
+          <div class="axes__card-tag">모발축 · HAIR AXIS</div>
+          <div class="axes__card-title">모발은<br>구조물입니다</div>
+          <p class="axes__card-body">
+            모발은 이미 만들어진 단백질 구조물입니다.
+            전체 중량의 65~95%가 단백질로 이루어져 있으며,
+            피질과 큐티클의 결합이 탄력과 끊김을 결정합니다.
+            구조물에는 재료가 필요합니다.
+          </p>
+        </div>
+      </div>
+      <div class="axes__statement reveal">
+        <p class="axes__statement-main">
+          두피는 시작점이고,<br>
+          모발은 결과입니다.<br>
+          <span class="accent">포텐시아는 둘 다 봅니다.</span>
+        </p>
+        <p class="axes__statement-sub">
+          여성의 변화는 두 축을 함께 봐야 설명됩니다
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── STATS ────────────── -->
+  <section class="section section--green">
+    <div class="container">
+      <span class="label label--center reveal">포텐시아가 두 축을 설계한 근거</span>
+      <h2 class="stats__headline reveal reveal-d1">숫자로 보는 설계 배경</h2>
+      <div class="stats__grid">
+        <div class="stats__card reveal reveal-d1">
+          <div class="stats__number">50%<span style="font-size:0.5em">+</span></div>
+          <p class="stats__desc">79세 이상 여성에서<br>여성형 탈모 발생이<br>보고되는 비율</p>
+        </div>
+        <div class="stats__card reveal reveal-d2">
+          <div class="stats__number">95%</div>
+          <p class="stats__desc">모발이 단백질로<br>이루어진 비중<br>(피질 약 90%)</p>
+        </div>
+        <div class="stats__card reveal reveal-d3">
+          <div class="stats__number">34.5%</div>
+          <p class="stats__desc">토코트리에놀 100mg<br>8개월 섭취 시<br>모발 수 증가율</p>
+        </div>
+        <div class="stats__card reveal reveal-d4">
+          <div class="stats__number">4</div>
+          <p class="stats__desc">두피·모발 두 축을<br>함께 설계한<br>포텐시아 핵심 성분</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── INGREDIENT 1: TOCOTRIENOL ────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="ingredient">
+        <div class="ingredient__visual reveal">
+          <div class="ingredient__circle ingredient__circle--green">
+            <img src="images/image 178.png" alt="토코트리에놀 원료">
+          </div>
+        </div>
+        <div class="ingredient__content reveal reveal-d2">
+          <span class="ingredient__badge">두피축 · Scalp Axis</span>
+          <h3 class="ingredient__name">토코트리에놀</h3>
+          <p class="ingredient__dosage">100mg / 1일 섭취량</p>
+          <p class="ingredient__body">
+            두피 산화 스트레스 축을 설명하기 가장 적합한 성분입니다.
+            비타민 E 계열 중에서도 기능성이 주목받는 분획으로,
+            팜·아나토·쌀겨 같은 식물성 원료에서 얻어집니다.<br><br>
+            38명을 대상으로 한 8개월 무작위 이중맹검 위약대조 시험에서
+            100mg/일 보충 시 모발 수가 34.5% 증가하였으며,
+            위약군은 0.1% 감소를 나타냈습니다.
+            4개월 시점에서도 15.2% 증가가 관찰되었습니다.
+          </p>
+          <blockquote class="ingredient__quote">
+            두피가 먼저 지치면, 모발은 나중에 티가 납니다.<br>
+            포텐시아는 두피 산화 스트레스 축부터 봅니다.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── INGREDIENT 2: L-CYSTINE ────────────── -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="ingredient ingredient--reverse">
+        <div class="ingredient__visual reveal reveal-d2">
+          <div class="ingredient__circle ingredient__circle--white">
+            <img src="images/image 177.png" alt="L-시스틴 원료">
+          </div>
+        </div>
+        <div class="ingredient__content reveal">
+          <span class="ingredient__badge">모발축 · Hair Axis</span>
+          <h3 class="ingredient__name">L-시스틴</h3>
+          <p class="ingredient__dosage">500mg / 1일 섭취량</p>
+          <p class="ingredient__body">
+            모발의 약 65~95%는 단백질로 이루어져 있으며,
+            그 중 피질은 약 90%를 차지합니다.
+            L-시스틴은 케라틴 구조와 연결되는 황 함유 아미노산 계열로,
+            이 제품에서 '유행 성분'이 아닌 구조 영양으로 자리합니다.<br><br>
+            머리카락이 머리카락답게 서 있을 수 있게 돕는 재료.
+            포텐시아의 모발축 설계 중심 성분입니다.
+          </p>
+          <blockquote class="ingredient__quote">
+            모발은 분위기가 아니라 구조입니다.<br>
+            구조물에는 재료가 필요합니다.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── INGREDIENT 3: ZINC ────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="ingredient">
+        <div class="ingredient__visual reveal">
+          <div class="ingredient__circle ingredient__circle--green">
+            <img src="images/image 175.png" alt="아연 원료">
+          </div>
+        </div>
+        <div class="ingredient__content reveal reveal-d2">
+          <span class="ingredient__badge">브리지 성분 · Bridge</span>
+          <h3 class="ingredient__name">아연</h3>
+          <p class="ingredient__dosage">10mg / 1일 섭취량</p>
+          <p class="ingredient__body">
+            아연은 수백 개의 효소와 단백질 합성에 관여하며,
+            두피와 모발 두 축을 연결하는 브리지 성분입니다.
+            결핍성 탈모는 보충 후 회복될 수 있다는 점이 알려져 있습니다.<br><br>
+            포텐시아는 고용량 과시형이 아닌 적정량 균형 설계형입니다.
+            국내 건강기능식품 기준 정상적인 세포분열에 필요한
+            기본 미네랄로서 설계되었습니다.
+          </p>
+          <blockquote class="ingredient__quote">
+            특별한 성분 하나보다,<br>
+            빠지면 티 나는 기본기가 먼저입니다.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── INGREDIENT 4: VITAMIN D3 ────────────── -->
+  <section class="section section--green">
+    <div class="container">
+      <div class="ingredient ingredient--reverse">
+        <div class="ingredient__visual reveal reveal-d2">
+          <div class="ingredient__circle ingredient__circle--warm">
+            <img src="images/image 176.png" alt="비타민 D3 원료">
+          </div>
+        </div>
+        <div class="ingredient__content reveal">
+          <span class="ingredient__badge">여성 기초축 · Foundation</span>
+          <h3 class="ingredient__name">비타민 D3</h3>
+          <p class="ingredient__dosage">1,000IU (25μg) / 1일 섭취량</p>
+          <p class="ingredient__body">
+            여성에서 낮은 비타민 D 상태와 여성형 탈모 또는
+            휴지기 탈모가 함께 보고되는 사례가 반복적으로 언급됩니다.
+            결핍 가능성이 있을 때 보충이 중요하다는 시각이 많습니다.<br><br>
+            포텐시아는 이를 '헤어 성장 만능 성분'으로 과장하지 않습니다.
+            여성의 바탕 컨디션과 성장 환경을 고려한 기초 축으로
+            설계했습니다.
+          </p>
+          <blockquote class="ingredient__quote">
+            바쁜 실내 생활이 길수록<br>
+            놓치기 쉬운 햇빛 비타민.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── EXPERT ────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="expert">
+        <img
+          src="images/Gemini_Generated_Image_2jrief2jrief2jri.png"
+          alt="박태성 의사 — 포텐시아 성분 자문"
+          class="expert__photo reveal"
+        >
+        <div class="reveal reveal-d2">
+          <p class="expert__tag">포텐시아 성분 설계 자문</p>
+          <h3 class="expert__name">박태성 의사</h3>
+          <p class="expert__role">두피·모발 영양 설계 자문</p>
+          <p class="expert__body">
+            "포텐시아는 <strong>유행 성분을 쌓는 방식이 아닌,
+            두피축과 모발축을 구분하여 설계한</strong> 접근이 인상적입니다.<br><br>
+            토코트리에놀의 두피 산화 스트레스 기전,
+            L-시스틴의 구조 영양 역할,
+            아연과 비타민 D3의 기초 균형 설계—
+            각 성분이 제자리에 놓여 있습니다.<br><br>
+            고용량을 과시하기보다
+            <strong>정직한 균형 설계에 집중한 제품</strong>입니다."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── PHILOSOPHY ────────────── -->
+  <section class="section section--dark">
+    <div class="container--narrow">
+      <span class="label label--white label--center reveal">포텐시아의 설계 철학</span>
+      <h2 class="philosophy__headline reveal reveal-d1">
+        포텐시아는<br>유행보다 구조를 봅니다
+      </h2>
+      <ul class="philosophy__list">
+        <li class="philosophy__item reveal reveal-d1">
+          <span class="philosophy__from">고용량 쇼잉</span>
+          <span class="philosophy__arrow">→</span>
+          <span class="philosophy__to">균형 있는 적정 설계</span>
+        </li>
+        <li class="philosophy__item reveal reveal-d2">
+          <span class="philosophy__from">과장된 비밀 노하우</span>
+          <span class="philosophy__arrow">→</span>
+          <span class="philosophy__to">정직하고 투명한 설명</span>
+        </li>
+        <li class="philosophy__item reveal reveal-d3">
+          <span class="philosophy__from">한쪽만 챙기는 접근</span>
+          <span class="philosophy__arrow">→</span>
+          <span class="philosophy__to">두피·모발 두 축 동시 고려</span>
+        </li>
+        <li class="philosophy__item reveal reveal-d4">
+          <span class="philosophy__from">세게 파는 탈모영양제</span>
+          <span class="philosophy__arrow">→</span>
+          <span class="philosophy__to">조용히 오래 먹는 여성 루틴</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ────────────── ROUTINE ────────────── -->
+  <section class="section">
+    <div class="container">
+      <span class="label label--center reveal">포텐시아 섭취 가이드</span>
+      <h2 class="routine__headline reveal reveal-d1">매일, 조용하게, 꾸준히</h2>
+      <p class="routine__sub reveal reveal-d2">
+        모발 변화는 천천히 진행됩니다. 루틴의 힘은 꾸준함에서 옵니다.
+      </p>
+      <div class="routine__grid">
+        <div class="routine__step reveal reveal-d1">
+          <p class="routine__step-num">STEP 01</p>
+          <p class="routine__step-value">1회</p>
+          <p class="routine__step-label">하루 1회<br>정해진 시간에</p>
+        </div>
+        <div class="routine__step reveal reveal-d2">
+          <p class="routine__step-num">STEP 02</p>
+          <p class="routine__step-value">캡슐</p>
+          <p class="routine__step-label">물과 함께<br>캡슐 섭취</p>
+        </div>
+        <div class="routine__step reveal reveal-d3">
+          <p class="routine__step-num">STEP 03</p>
+          <p class="routine__step-value">12주</p>
+          <p class="routine__step-label">최소 12주<br>지속 섭취 권장</p>
+        </div>
+        <div class="routine__step reveal reveal-d4">
+          <p class="routine__step-num">STEP 04</p>
+          <p class="routine__step-value">3–6<span style="font-size:0.55em;font-weight:600;">개월</span></p>
+          <p class="routine__step-label">충분한 효과를 위한<br>권장 섭취 기간</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── CTA + FORM ────────────── -->
+  <section class="section section--alt" id="form">
+    <div class="container--narrow">
+      <h2 class="cta__headline reveal">
+        비어 보이기 시작한 순간,<br>
+        <strong>두피와 모발을 함께 설계할 차례</strong>
+      </h2>
+      <p class="cta__brand reveal reveal-d1">POTENCIA WOMEN</p>
+
+      <div class="cta__form-wrap reveal reveal-d2">
+        <p class="cta__form-title">출시 알림 신청</p>
+        <p class="cta__form-sub">
+          포텐시아 출시 알림과 첫 구매 혜택을 가장 먼저 받으세요.<br>
+          전화번호만 남겨주시면 됩니다.
+        </p>
+
+        <!-- Tally Embed -->
+        <iframe
+          data-tally-src="https://tally.so/embed/QKdzQ1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="1"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="mobal"
+        ></iframe>
+        <script>
+          var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+        </script>
+
+        <p class="cta__disclaimer">
+          수집된 전화번호는 출시 알림 및 혜택 안내 목적으로만 사용됩니다.<br>
+          언제든지 수신 거부하실 수 있습니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── FOOTER ────────────── -->
+  <footer class="footer">
+    <p class="footer__brand">POTENCIA <span>WOMEN</span></p>
+    <p class="footer__copy">
+      포텐시아 / POTENCIA WOMEN<br>
+      여성 두피·모발 밸런스 캡슐<br>
+      본 제품은 건강기능식품이 아니며, 질병의 예방 또는 치료를 위한 의약품이 아닙니다.
+    </p>
+    <div class="footer__links">
+      <a href="#">개인정보처리방침</a>
+      <a href="#">이용약관</a>
+      <a href="#">고객센터</a>
+    </div>
+  </footer>
+
+  <!-- ────────────── SCROLL REVEAL ────────────── -->
+  <script>
+    (function () {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
