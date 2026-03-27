@@ -79,12 +79,12 @@
       color: var(--green); margin-bottom: 36px;
     }
     .hero__product {
-      width: 180px; height: auto;
+      width: 360px; height: auto;
       margin: 0 auto 52px;
       display: block;
       filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
     }
-    @media (min-width: 768px) { .hero__product { width: 240px; } }
+    @media (min-width: 768px) { .hero__product { width: 480px; } }
 
     .hero__headline {
       font-size: clamp(26px, 4.5vw, 50px);
@@ -279,7 +279,7 @@
       display: flex; align-items: center; justify-content: center;
     }
     .ingredient__circle img {
-      width: 80%; height: 80%; object-fit: contain;
+      width: 100%; height: 100%; object-fit: cover;
     }
     .ingredient__circle--white { background: #EDEDEA; }
     .ingredient__circle--green { background: var(--green-pale); }
@@ -477,6 +477,125 @@
     }
     .footer__links a:hover { color: rgba(255,255,255,0.7); }
 
+    /* ── REVIEWS ── */
+    .reviews__headline {
+      font-size: clamp(22px, 3.5vw, 38px);
+      font-weight: 600; letter-spacing: -0.02em;
+      margin-bottom: 8px; text-align: center;
+    }
+    .reviews__sub {
+      font-size: 15px; color: var(--mid);
+      text-align: center; margin-bottom: 48px;
+    }
+    .reviews__notice {
+      background: var(--green-pale);
+      border: 1px solid rgba(98,132,90,0.2);
+      padding: 16px 20px;
+      margin-bottom: 52px;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .reviews__notice-icon { font-size: 16px; flex-shrink: 0; }
+    .reviews__notice-text { font-size: 12px; color: var(--mid); line-height: 1.7; }
+    .reviews__notice-text strong { color: var(--text); font-weight: 600; }
+    .reviews__grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 768px) { .reviews__grid { grid-template-columns: 1fr; } }
+    .review__card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .review__image {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .review__body { padding: 24px; }
+    .review__meta {
+      display: flex; align-items: center;
+      justify-content: space-between; margin-bottom: 6px;
+    }
+    .review__name { font-size: 14px; font-weight: 700; color: var(--text); }
+    .review__period {
+      font-size: 11px; font-weight: 600;
+      color: var(--green); background: var(--green-pale);
+      padding: 3px 10px;
+    }
+    .review__profile { font-size: 12px; color: var(--light); margin-bottom: 12px; }
+    .review__text { font-size: 14px; color: var(--mid); line-height: 1.8; }
+
+    .hero__sub2 {
+      font-size: clamp(13px, 1.6vw, 15px);
+      font-weight: 400; color: var(--mid);
+      line-height: 1.8; margin-bottom: 36px;
+    }
+
+    /* ── HERO INCENTIVE ── */
+    .hero__incentive {
+      margin-top: 20px;
+      background: rgba(98,132,90,0.1);
+      border: 1px solid rgba(98,132,90,0.35);
+      padding: 14px 28px;
+      font-size: 14px; font-weight: 600;
+      color: var(--text); line-height: 1.7;
+      text-align: center;
+    }
+    .hero__incentive span { color: var(--green); }
+
+    /* ── EXPERT V2 ── */
+    .expert-v2 {
+      background: var(--white);
+      padding: 80px 24px;
+      color: var(--text);
+    }
+    .expert-v2__inner { max-width: 680px; margin: 0 auto; }
+    .expert-v2__label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 16px; display: block;
+    }
+    .expert-v2__headline {
+      font-size: clamp(26px, 4.5vw, 44px);
+      font-weight: 700; line-height: 1.25;
+      letter-spacing: -0.025em; color: var(--text);
+      margin-bottom: 36px;
+    }
+    .expert-v2__photo {
+      width: 100%; display: block;
+      margin-bottom: 0;
+    }
+    .expert-v2__quote {
+      background: var(--off-white);
+      border-left: 3px solid var(--green);
+      padding: 28px 28px 28px 24px;
+      margin: 0 0 8px;
+    }
+    .expert-v2__quote p {
+      font-size: 16px; line-height: 1.8;
+      color: var(--mid);
+      font-style: italic;
+    }
+    .expert-v2__list {
+      list-style: none; margin-top: 8px;
+    }
+    .expert-v2__item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--off-white);
+      margin-bottom: 2px;
+    }
+    .expert-v2__item::before {
+      content: ''; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--green-light);
+      flex-shrink: 0;
+    }
+    .expert-v2__item-text {
+      font-size: 15px; color: var(--text); font-weight: 400;
+    }
+
     /* ── REVEAL ANIMATION ── */
     .reveal {
       opacity: 0; transform: translateY(22px);
@@ -499,21 +618,23 @@
 
   <!-- ────────────── HERO ────────────── -->
   <section class="hero">
-    <p class="hero__eyebrow">POTENCIA WOMEN — 두피·모발 밸런스 캡슐</p>
+    <p class="hero__eyebrow">[두피·모발 케어] 포텐시아 정</p>
     <img
-      src="images/Gemini_Generated_Image_iqmko9iqmko9iqmk 3.png"
+      src="images/Group 136.png"
       alt="포텐시아 POTENCIA WOMEN 캡슐 제품"
       class="hero__product"
     >
     <h1 class="hero__headline">
-      여성의 두피와 모발을<br>
-      <strong>함께 고려한 캡슐</strong>
+      <strong>[두피·모발 케어] 포텐시아 정</strong>
     </h1>
-    <p class="hero__sub">
-      두피와 모발은 따로 약해지지 않으니까.<br>
-      포텐시아는 함께 설계했습니다.
+    <p class="hero__sub2">
+      현직 약사와 서울대 출신 연구진이<br>직접 설계한 두피·모발 토코트리에놀 4중 배합
     </p>
     <a href="#form" class="hero__cta">출시 알림 신청하기</a>
+    <div class="hero__incentive">
+      🎁 지금 사전예약하면<br>
+      <span>무료 샘플 제공 + 첫 구매 40% 쿠폰 즉시 지급</span>
+    </div>
     <div class="hero__scroll">
       <div class="hero__scroll-line"></div>
       <span class="hero__scroll-text">Scroll</span>
@@ -534,24 +655,24 @@
       <ul class="problem__list reveal reveal-d3">
         <li class="problem__item">
           <span class="problem__dot"></span>
-          <span class="problem__text">정수리 볼륨이 예전 같지 않고 납작해 보입니다</span>
+          <span class="problem__text">정수리 볼륨이 예전 같지 않고 납작해졌어요</span>
         </li>
         <li class="problem__item">
           <span class="problem__dot"></span>
-          <span class="problem__text">가르마가 넓어 보이고 두피가 보이기 시작했습니다</span>
+          <span class="problem__text">가르마가 넓어 보이고 두피가 보이기 시작했어요</span>
         </li>
         <li class="problem__item">
           <span class="problem__dot"></span>
-          <span class="problem__text">모발이 얇고 힘없이 처지며 탄력이 사라졌습니다</span>
+          <span class="problem__text">모발이 얇고 힘없이 처지며 탄력이 사라졌어요</span>
         </li>
         <li class="problem__item">
           <span class="problem__dot"></span>
-          <span class="problem__text">끝으로 갈수록 끊기고 푸석하게 느껴집니다</span>
+          <span class="problem__text">모발의 끝이 갈수록 끊기고 푸석해졌어요</span>
         </li>
       </ul>
       <p class="problem__closing reveal reveal-d4">
-        겉만 정리하는 루틴에서,<br>
-        <span class="accent">안쪽을 설계하는 루틴</span>으로.
+        모발의 원인과 결과를<br>
+        <span class="accent">한번에 관리하는 루틴</span>
       </p>
     </div>
   </section>
@@ -560,28 +681,22 @@
   <section class="section">
     <div class="container">
       <h2 class="axes__headline reveal">
-        두피만 봐도 부족하고<br>
-        <strong>모발만 봐도 부족합니다</strong>
+        따로 보면 부족합니다.<br>
+        <strong>두피와 모발을 한번에</strong>
       </h2>
       <div class="axes__grid">
         <div class="axes__card reveal reveal-d1">
           <div class="axes__card-tag">두피축 · SCALP AXIS</div>
-          <div class="axes__card-title">두피는<br>시작점입니다</div>
+          <div class="axes__card-title">두피는<br>원인입니다</div>
           <p class="axes__card-body">
-            두피는 새 모발이 자라나는 환경입니다.
-            두피 산화 스트레스는 모낭세포 노화, 조기 퇴행기 진입,
-            지질과산화와 연결될 수 있습니다.
-            환경이 무너지면 새 모발의 출발점도 흔들립니다.
+            두피는 모발이 생성되고 자라나는 유기 조직입니다. 외부 자극으로 인한 스트레스와 피지의 지질, 산화는 모낭 세포를 노화시켜 모발의 성장 주기를 단축시킵니다. 따서 건강한 모발이 생성되도록 세포의 산화 억제 및 환경 개선이 필수적입니다. 
           </p>
         </div>
         <div class="axes__card reveal reveal-d2">
           <div class="axes__card-tag">모발축 · HAIR AXIS</div>
-          <div class="axes__card-title">모발은<br>구조물입니다</div>
+          <div class="axes__card-title">모발은<br>결과입니다</div>
           <p class="axes__card-body">
-            모발은 이미 만들어진 단백질 구조물입니다.
-            전체 중량의 65~95%가 단백질로 이루어져 있으며,
-            피질과 큐티클의 결합이 탄력과 끊김을 결정합니다.
-            구조물에는 재료가 필요합니다.
+            모발은 두피 밖으로 밀려나온 단백질 구조물입니다. 전체 중량의 65-95%가 케라틴 단백질로 이루어져있는데,이 단백질 결합이 약해지면 탄력을 잃고 쉽게 끊어집니다. 모발은 스스로 재생되지 않으므로, 구조를 유지하기 위한 외부 단백질 공급과 결합 강화가 반드시 필요합니다. 
           </p>
         </div>
       </div>
@@ -605,8 +720,8 @@
       <h2 class="stats__headline reveal reveal-d1">숫자로 보는 설계 배경</h2>
       <div class="stats__grid">
         <div class="stats__card reveal reveal-d1">
-          <div class="stats__number">50%<span style="font-size:0.5em">+</span></div>
-          <p class="stats__desc">79세 이상 여성에서<br>여성형 탈모 발생이<br>보고되는 비율</p>
+          <div class="stats__number" style="font-size:clamp(28px,4vw,44px);">49만 명</div>
+          <p class="stats__desc">2024년<br>여성 탈모 인구 수</p>
         </div>
         <div class="stats__card reveal reveal-d2">
           <div class="stats__number">95%</div>
@@ -630,7 +745,7 @@
       <div class="ingredient">
         <div class="ingredient__visual reveal">
           <div class="ingredient__circle ingredient__circle--green">
-            <img src="images/image 178.png" alt="토코트리에놀 원료">
+            <img src="images/tocotrienol-complex_3-2.jpg" alt="토코트리에놀 원료">
           </div>
         </div>
         <div class="ingredient__content reveal reveal-d2">
@@ -638,18 +753,12 @@
           <h3 class="ingredient__name">토코트리에놀</h3>
           <p class="ingredient__dosage">100mg / 1일 섭취량</p>
           <p class="ingredient__body">
-            두피 산화 스트레스 축을 설명하기 가장 적합한 성분입니다.
-            비타민 E 계열 중에서도 기능성이 주목받는 분획으로,
-            팜·아나토·쌀겨 같은 식물성 원료에서 얻어집니다.<br><br>
+            강력한 항산화 작용을 통해 피지가 산화되는 지질과산화를 억제하고 모낭 세포의 스트레스를 낮춰줍니다. 이를 통해 노화로 인해 짧아진 모발의 성장 주기를 정상화하고, 모발이 탈락하지 않고 건강하게 자라날 수 있는 최적의 생성 환경을 조성합니다.<br><br>
             38명을 대상으로 한 8개월 무작위 이중맹검 위약대조 시험에서
             100mg/일 보충 시 모발 수가 34.5% 증가하였으며,
             위약군은 0.1% 감소를 나타냈습니다.
             4개월 시점에서도 15.2% 증가가 관찰되었습니다.
           </p>
-          <blockquote class="ingredient__quote">
-            두피가 먼저 지치면, 모발은 나중에 티가 납니다.<br>
-            포텐시아는 두피 산화 스트레스 축부터 봅니다.
-          </blockquote>
         </div>
       </div>
     </div>
@@ -661,7 +770,7 @@
       <div class="ingredient ingredient--reverse">
         <div class="ingredient__visual reveal reveal-d2">
           <div class="ingredient__circle ingredient__circle--white">
-            <img src="images/image 177.png" alt="L-시스틴 원료">
+            <img src="images/theanine_3-2.jpg" alt="L-시스틴 원료">
           </div>
         </div>
         <div class="ingredient__content reveal">
@@ -669,17 +778,13 @@
           <h3 class="ingredient__name">L-시스틴</h3>
           <p class="ingredient__dosage">500mg / 1일 섭취량</p>
           <p class="ingredient__body">
-            모발의 약 65~95%는 단백질로 이루어져 있으며,
-            그 중 피질은 약 90%를 차지합니다.
-            L-시스틴은 케라틴 구조와 연결되는 황 함유 아미노산 계열로,
-            이 제품에서 '유행 성분'이 아닌 구조 영양으로 자리합니다.<br><br>
-            머리카락이 머리카락답게 서 있을 수 있게 돕는 재료.
-            포텐시아의 모발축 설계 중심 성분입니다.
+            L-시스틴의 가장 큰 효과는 모발의 구조적 강도를 높이는 것입니다.
+            시스틴 분자 사이의 강력한 황(S-S) 결합은 가늘고 힘없이 푸석거리는
+            모발을 탄탄하게 잡아주며, 모발이 쉽게 끊어지거나 빠지는 것을
+            방지하는 천연 접착제 역할을 합니다.<br><br>
+            머리카락 한 올 한 올을 더 굵고 견고하게 만들어
+            전체적인 볼륨감을 살려주는 데 탁월합니다.
           </p>
-          <blockquote class="ingredient__quote">
-            모발은 분위기가 아니라 구조입니다.<br>
-            구조물에는 재료가 필요합니다.
-          </blockquote>
         </div>
       </div>
     </div>
@@ -691,7 +796,7 @@
       <div class="ingredient">
         <div class="ingredient__visual reveal">
           <div class="ingredient__circle ingredient__circle--green">
-            <img src="images/image 175.png" alt="아연 원료">
+            <img src="images/marine-collagen-peptides_3-2.jpg" alt="아연 원료">
           </div>
         </div>
         <div class="ingredient__content reveal reveal-d2">
@@ -699,17 +804,14 @@
           <h3 class="ingredient__name">아연</h3>
           <p class="ingredient__dosage">10mg / 1일 섭취량</p>
           <p class="ingredient__body">
-            아연은 수백 개의 효소와 단백질 합성에 관여하며,
-            두피와 모발 두 축을 연결하는 브리지 성분입니다.
-            결핍성 탈모는 보충 후 회복될 수 있다는 점이 알려져 있습니다.<br><br>
-            포텐시아는 고용량 과시형이 아닌 적정량 균형 설계형입니다.
-            국내 건강기능식품 기준 정상적인 세포분열에 필요한
-            기본 미네랄로서 설계되었습니다.
+            아연은 모낭 세포의 복제와 재생을 촉진하여 모발이 빠지는 휴지기를
+            줄이고 건강한 성장기를 유지하는 데 결정적인 역할을 합니다.
+            특히 탈모를 유발하는 DHT 호르몬의 생성을 돕는 효소의 활성을
+            억제하여 모낭이 위축되는 것을 방어하는 천연 방패가 되어줍니다.<br><br>
+            단백질 대사를 원활하게 도와 L-시스틴 같은 영양소가 실제 머리카락으로
+            합성되도록 가이드하며, 두피의 염증과 피지를 조절해 모발이 잘 자랄 수
+            있는 최적의 환경을 조성합니다.
           </p>
-          <blockquote class="ingredient__quote">
-            특별한 성분 하나보다,<br>
-            빠지면 티 나는 기본기가 먼저입니다.
-          </blockquote>
         </div>
       </div>
     </div>
@@ -721,7 +823,7 @@
       <div class="ingredient ingredient--reverse">
         <div class="ingredient__visual reveal reveal-d2">
           <div class="ingredient__circle ingredient__circle--warm">
-            <img src="images/image 176.png" alt="비타민 D3 원료">
+            <img src="images/collagen-osa_3-2.jpg" alt="비타민 D3 원료">
           </div>
         </div>
         <div class="ingredient__content reveal">
@@ -729,79 +831,101 @@
           <h3 class="ingredient__name">비타민 D3</h3>
           <p class="ingredient__dosage">1,000IU (25μg) / 1일 섭취량</p>
           <p class="ingredient__body">
-            여성에서 낮은 비타민 D 상태와 여성형 탈모 또는
-            휴지기 탈모가 함께 보고되는 사례가 반복적으로 언급됩니다.
-            결핍 가능성이 있을 때 보충이 중요하다는 시각이 많습니다.<br><br>
-            포텐시아는 이를 '헤어 성장 만능 성분'으로 과장하지 않습니다.
-            여성의 바탕 컨디션과 성장 환경을 고려한 기초 축으로
-            설계했습니다.
+            비타민 D3는 모낭 세포의 수용체와 결합해 머리카락의 생명 주기
+            자체를 활성화합니다. 면역 체계를 안정시켜 원형 탈모와 같은
+            자가면역 반응으로부터 모발을 보호하고, 두피 세포의 분화와 재생을
+            도와 가늘어진 모발이 다시 굵고 단단하게 자랄 수 있는 기초 체력을
+            만들어줍니다.<br><br>
+            현대인의 고질적인 결핍 성분인 만큼, 적절한 수치를 유지하는
+            것만으로도 갑작스러운 탈모 가속화를 막아줍니다.
           </p>
-          <blockquote class="ingredient__quote">
-            바쁜 실내 생활이 길수록<br>
-            놓치기 쉬운 햇빛 비타민.
-          </blockquote>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ────────────── EXPERT ────────────── -->
-  <section class="section">
-    <div class="container">
-      <div class="expert">
-        <img
-          src="images/Gemini_Generated_Image_2jrief2jrief2jri.png"
-          alt="박태성 의사 — 포텐시아 성분 자문"
-          class="expert__photo reveal"
-        >
-        <div class="reveal reveal-d2">
-          <p class="expert__tag">포텐시아 성분 설계 자문</p>
-          <h3 class="expert__name">박태성 의사</h3>
-          <p class="expert__role">두피·모발 영양 설계 자문</p>
-          <p class="expert__body">
-            "포텐시아는 <strong>유행 성분을 쌓는 방식이 아닌,
-            두피축과 모발축을 구분하여 설계한</strong> 접근이 인상적입니다.<br><br>
-            토코트리에놀의 두피 산화 스트레스 기전,
-            L-시스틴의 구조 영양 역할,
-            아연과 비타민 D3의 기초 균형 설계—
-            각 성분이 제자리에 놓여 있습니다.<br><br>
-            고용량을 과시하기보다
-            <strong>정직한 균형 설계에 집중한 제품</strong>입니다."
-          </p>
-        </div>
+  <section class="expert-v2">
+    <div class="expert-v2__inner">
+      <span class="expert-v2__label reveal">믿을 수 있는 배합</span>
+      <h2 class="expert-v2__headline reveal reveal-d1">
+        현직 약사와<br>서울대 연구진이<br>설계했습니다
+      </h2>
+      <img
+        src="images/Gemini_Generated_Image_2jrief2jrief2jri.png"
+        alt="박태성 의사 — 포텐시아 성분 자문"
+        class="expert-v2__photo reveal reveal-d2"
+      >
+      <div class="expert-v2__quote reveal reveal-d3">
+        <p>"시중의 많은 모발 영양제들이 인체 모발의 메커니즘을 이해하지 못하고 만들었다고 생각했습니다. 모발 건강의 근본 원인을 잡는 것을 가장 중요하게 생각했습니다."</p>
       </div>
+      <ul class="expert-v2__list reveal reveal-d4">
+        <li class="expert-v2__item">
+          <span class="expert-v2__item-text">현직 약사 직접 성분 배합 설계</span>
+        </li>
+        <li class="expert-v2__item">
+          <span class="expert-v2__item-text">서울대 출신 연구진 참여</span>
+        </li>
+        <li class="expert-v2__item">
+          <span class="expert-v2__item-text">식약처 고시 기능성 원료 기반 설계</span>
+        </li>
+        <li class="expert-v2__item">
+          <span class="expert-v2__item-text">최소 유효 용량 기준 안전성 설계</span>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <!-- ────────────── PHILOSOPHY ────────────── -->
-  <section class="section section--dark">
-    <div class="container--narrow">
-      <span class="label label--white label--center reveal">포텐시아의 설계 철학</span>
-      <h2 class="philosophy__headline reveal reveal-d1">
-        포텐시아는<br>유행보다 구조를 봅니다
-      </h2>
-      <ul class="philosophy__list">
-        <li class="philosophy__item reveal reveal-d1">
-          <span class="philosophy__from">고용량 쇼잉</span>
-          <span class="philosophy__arrow">→</span>
-          <span class="philosophy__to">균형 있는 적정 설계</span>
-        </li>
-        <li class="philosophy__item reveal reveal-d2">
-          <span class="philosophy__from">과장된 비밀 노하우</span>
-          <span class="philosophy__arrow">→</span>
-          <span class="philosophy__to">정직하고 투명한 설명</span>
-        </li>
-        <li class="philosophy__item reveal reveal-d3">
-          <span class="philosophy__from">한쪽만 챙기는 접근</span>
-          <span class="philosophy__arrow">→</span>
-          <span class="philosophy__to">두피·모발 두 축 동시 고려</span>
-        </li>
-        <li class="philosophy__item reveal reveal-d4">
-          <span class="philosophy__from">세게 파는 탈모영양제</span>
-          <span class="philosophy__arrow">→</span>
-          <span class="philosophy__to">조용히 오래 먹는 여성 루틴</span>
-        </li>
-      </ul>
+  <!-- ────────────── REVIEWS ────────────── -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="label label--center reveal">사전 체험단 반응</span>
+      <h2 class="reviews__headline reveal reveal-d1">먼저 경험해보신<br>사전 고객님들의 솔직한 반응</h2>
+      <p class="reviews__sub reveal reveal-d2">출시 전 소수 체험단에게 샘플을 제공하고 수집한 초기 반응입니다.</p>
+
+      <div class="reviews__notice reveal reveal-d2">
+        <span class="reviews__notice-icon">📋</span>
+        <p class="reviews__notice-text">
+          <strong>사전 체험단 후기 안내</strong><br>
+          출시 전 소수의 사전 체험단에게 샘플을 제공하고 수집한 초기 반응입니다.
+        </p>
+      </div>
+
+      <div class="reviews__grid">
+        <div class="review__card reveal reveal-d1">
+          <img src="images/BAA8BC1CC13CD130_C0ACC9C46-1.jpg" alt="체험단 후기 — 두피 변화 비교" class="review__image">
+          <div class="review__body">
+            <div class="review__meta">
+              <span class="review__name">김**</span>
+              <span class="review__period">3달 체험</span>
+            </div>
+            <p class="review__profile">50대 주부</p>
+            <p class="review__text">"전에는 머리 손빗질하면 10가닥 넘게 손에 집혔었는데 먹은지 4-6주 정도 되니깐 확실히 줄어든 것 같아요. 더 꾸준히 먹어보려고요!"</p>
+          </div>
+        </div>
+        <div class="review__card reveal reveal-d2">
+          <img src="images/81rK38199pL.jpg" alt="체험단 후기 — 모발 변화 비교" class="review__image">
+          <div class="review__body">
+            <div class="review__meta">
+              <span class="review__name">이**</span>
+              <span class="review__period">3달 체험</span>
+            </div>
+            <p class="review__profile">20대 대학원생</p>
+            <p class="review__text">"머리카락도 얇은데 머리빠짐도 진짜 많은 편이라 종종 영양제 먹었는데 이건 두피부터 머릿결까지 한번에 관리할 수 있어서 편한 것 같아요!"</p>
+          </div>
+        </div>
+        <div class="review__card reveal reveal-d3">
+          <img src="images/Group 372.png" alt="체험단 후기 — 두피·모발 변화 비교" class="review__image">
+          <div class="review__body">
+            <div class="review__meta">
+              <span class="review__name">박**</span>
+              <span class="review__period">2달 체험</span>
+            </div>
+            <p class="review__profile">30대 프리랜서</p>
+            <p class="review__text">"요즘 생활 패턴이 너무 바뀌어서인지 머리숱이 너무 줄어 스트레스 받아서 먹어보기 시작했어요. 확실히 머릿결이 탄탄해진 것 같아요!"</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
